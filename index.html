@@ -12,18 +12,17 @@
       margin: 0;
     }
 
-    /* 🔥 CONTENEDOR DEL BANNER */
+    /* 🔥 BANNER */
     .banner-container {
-      padding: 15px; /* margen respecto a bordes */
+      padding: 15px;
     }
 
-    /* 🔥 BANNER SIN RECORTE */
     .banner {
       width: 100%;
-      max-width: 1200px; /* respeta tamaño original */
-      height: auto; /* mantiene proporción 1200x300 */
+      max-width: 1200px;
+      height: auto;
       display: block;
-      margin: 0 auto; /* centrado */
+      margin: 0 auto;
       border-radius: 10px;
     }
 
@@ -60,7 +59,7 @@
       background-color: darkgreen;
     }
 
-    /* 🔥 IMÁGENES CUADRADAS */
+    /* 🔥 IMAGEN COMO BOTÓN */
     img.ave {
       width: 50%;
       aspect-ratio: 1 / 1;
@@ -68,6 +67,20 @@
       border-radius: 12px;
       display: block;
       margin: 10px auto;
+      cursor: pointer; /* 👈 indica que es clickeable */
+      transition: transform 0.2s;
+    }
+
+    img.ave:hover {
+      transform: scale(1.05); /* efecto suave */
+    }
+
+    /* 🔥 MARCA DE AGUA */
+    .footer {
+      font-size: 12px;
+      color: rgba(0,0,0,0.4);
+      text-align: center;
+      padding: 15px;
     }
 
   </style>
@@ -75,7 +88,7 @@
 
 <body>
 
-<!-- 🔥 BANNER CON ESPACIADO -->
+<!-- 🔥 BANNER -->
 <div class="banner-container">
   <img src="imagenes/Banner_Auquisamana.jpg" class="banner">
 </div>
@@ -83,41 +96,52 @@
 <div class="grid">
 
   <div class="card" id="card9">
-    <img src="imagenes/Colibri_cometa_Sappho_sparganurus.jpg" class="ave">
+    <img src="imagenes/Colibri_cometa_Sappho_sparganurus.jpg" class="ave"
+         onclick="toggleAudio('audio9','card9')">
     <button onclick="toggleAudio('audio9','card9')">Escuchar</button>
     <audio id="audio9" src="audios/Colibri_cometa_Sappho_sparganurus_v1.mp3"></audio>
   </div>
 
   <div class="card" id="card10">
-    <img src="imagenes/Colibri_gigante_Patagona_gigas.jpg" class="ave">
+    <img src="imagenes/Colibri_gigante_Patagona_gigas.jpg" class="ave"
+         onclick="toggleAudio('audio10','card10')">
     <button onclick="toggleAudio('audio10','card10')">Escuchar</button>
     <audio id="audio10" src="audios/Colibri_gigante_Patagona_gigas_v1.mp3"></audio>
   </div>
 
   <div class="card" id="card4">
-    <img src="imagenes/Colibri_rutilante_Colibri_coruscans.jpg" class="ave">
+    <img src="imagenes/Colibri_rutilante_Colibri_coruscans.jpg" class="ave"
+         onclick="toggleAudio('audio4','card4')">
     <button onclick="toggleAudio('audio4','card4')">Escuchar</button>
     <audio id="audio4" src="audios/Colibri_rutilante_Colibri_coruscans_v2.mp3"></audio>
   </div>
 
   <div class="card" id="card5">
-    <img src="imagenes/Cortarramas_Phytotoma_rutila.jpg" class="ave">
+    <img src="imagenes/Cortarramas_Phytotoma_rutila.jpg" class="ave"
+         onclick="toggleAudio('audio5','card5')">
     <button onclick="toggleAudio('audio5','card5')">Escuchar</button>
     <audio id="audio5" src="audios/Cortarramas_Phytotoma_rutila_v1.mp3"></audio>
   </div>
 
   <div class="card" id="card6">
-    <img src="imagenes/Killi_killi_Falco_sparverius.jpg" class="ave">
+    <img src="imagenes/Killi_killi_Falco_sparverius.jpg" class="ave"
+         onclick="toggleAudio('audio6','card6')">
     <button onclick="toggleAudio('audio6','card6')">Escuchar</button>
     <audio id="audio6" src="audios/Killi_killi_Falco_sparverius_v2.mp3"></audio>
   </div>
 
   <div class="card" id="card12">
-    <img src="imagenes/Pinchaflor_carbonero_Diglossa_carbonaria.jpg" class="ave">
+    <img src="imagenes/Pinchaflor_carbonero_Diglossa_carbonaria.jpg" class="ave"
+         onclick="toggleAudio('audio12','card12')">
     <button onclick="toggleAudio('audio12','card12')">Escuchar</button>
     <audio id="audio12" src="audios/Pinchaflor_carbonero_Diglossa_carbonaria_v2.mp3"></audio>
   </div>
 
+</div>
+
+<!-- 🔥 MARCA DE AGUA -->
+<div class="footer">
+  Espacio Interactivo Memoria y Futuro Pipiripi - EIMF
 </div>
 
 <script>
