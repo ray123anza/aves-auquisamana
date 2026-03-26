@@ -2,22 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sonidos de Aves de Auquisamaña</title>
+  <title>Sonidos de Aves</title>
 
   <style>
     body {
       font-family: Arial;
       text-align: center;
       background-color: #eef7f2;
+      margin: 0;
     }
 
-    h1 {
-      margin-top: 20px;
+    /* 🔥 CONTENEDOR DEL BANNER */
+    .banner-container {
+      padding: 15px; /* margen respecto a bordes */
+    }
+
+    /* 🔥 BANNER SIN RECORTE */
+    .banner {
+      width: 100%;
+      max-width: 1200px; /* respeta tamaño original */
+      height: auto; /* mantiene proporción 1200x300 */
+      display: block;
+      margin: 0 auto; /* centrado */
+      border-radius: 10px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
     }
@@ -47,70 +59,107 @@
     button:hover {
       background-color: darkgreen;
     }
+
+    /* 🔥 IMÁGENES CUADRADAS */
+    img.ave {
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      margin: 10px auto;
+    }
+
   </style>
 </head>
 
 <body>
 
-<h1>🎶 Sonidos de Aves de Auquisamaña</h1>
+<!-- 🔥 BANNER CON ESPACIADO -->
+<div class="banner-container">
+  <img src="imagenes/Banner_Auquisamana.jpg" class="banner">
+</div>
 
 <div class="grid">
 
-  <div class="card" id="card1"><h3>Alkamari</h3><button onclick="playAudio('audio1','card1')">Escuchar</button><audio id="audio1" src="audios/Alkamari_Phalcoboenus_megalopterus_v1.mp3"></audio></div>
+  <div class="card" id="card9">
+    <img src="imagenes/Colibri_cometa_Sappho_sparganurus.jpg" class="ave">
+    <button onclick="toggleAudio('audio9','card9')">Escuchar</button>
+    <audio id="audio9" src="audios/Colibri_cometa_Sappho_sparganurus_v1.mp3"></audio>
+  </div>
 
-  <div class="card" id="card2"><h3>Cachudito</h3><button onclick="playAudio('audio2','card2')">Escuchar</button><audio id="audio2" src="audios/Cachudito_Anairetes_parulus_v2.mp3"></audio></div>
+  <div class="card" id="card10">
+    <img src="imagenes/Colibri_gigante_Patagona_gigas.jpg" class="ave">
+    <button onclick="toggleAudio('audio10','card10')">Escuchar</button>
+    <audio id="audio10" src="audios/Colibri_gigante_Patagona_gigas_v1.mp3"></audio>
+  </div>
 
-  <div class="card" id="card3"><h3>Canastero Rojizo</h3><button onclick="playAudio('audio3','card3')">Escuchar</button><audio id="audio3" src="audios/Canastero_rojizo_Asthenes_berlepschi_v2.mp3"></audio></div>
+  <div class="card" id="card4">
+    <img src="imagenes/Colibri_rutilante_Colibri_coruscans.jpg" class="ave">
+    <button onclick="toggleAudio('audio4','card4')">Escuchar</button>
+    <audio id="audio4" src="audios/Colibri_rutilante_Colibri_coruscans_v2.mp3"></audio>
+  </div>
 
-  <div class="card" id="card4"><h3>Colibrí Rutilante</h3><button onclick="playAudio('audio4','card4')">Escuchar</button><audio id="audio4" src="audios/Colibrí_rutilante_Colibri_coruscans_v2.mp3"></audio></div>
+  <div class="card" id="card5">
+    <img src="imagenes/Cortarramas_Phytotoma_rutila.jpg" class="ave">
+    <button onclick="toggleAudio('audio5','card5')">Escuchar</button>
+    <audio id="audio5" src="audios/Cortarramas_Phytotoma_rutila_v1.mp3"></audio>
+  </div>
 
-  <div class="card" id="card5"><h3>Cortarramas</h3><button onclick="playAudio('audio5','card5')">Escuchar</button><audio id="audio5" src="audios/Cortarramas_Phytotoma_rutila_v1.mp3"></audio></div>
+  <div class="card" id="card6">
+    <img src="imagenes/Killi_killi_Falco_sparverius.jpg" class="ave">
+    <button onclick="toggleAudio('audio6','card6')">Escuchar</button>
+    <audio id="audio6" src="audios/Killi_killi_Falco_sparverius_v2.mp3"></audio>
+  </div>
 
-  <div class="card" id="card6"><h3>Killi Killi</h3><button onclick="playAudio('audio6','card6')">Escuchar</button><audio id="audio6" src="audios/Killi_killi_Falco_sparverius_v2.mp3"></audio></div>
-
-  <div class="card" id="card7"><h3>Naranjero</h3><button onclick="playAudio('audio7','card7')">Escuchar</button><audio id="audio7" src="audios/Naranjero_rauenia_bonariensis_v1.mp3"></audio></div>
-
-  <div class="card" id="card8"><h3>Perico Cordillerano Gris</h3><button onclick="playAudio('audio8','card8')">Escuchar</button><audio id="audio8" src="audios/Perico_cordillerano_gris_Psilopsiagon_aymara_v1.mp3"></audio></div>
-
-  <div class="card" id="card9"><h3>Picaflor Cometa</h3><button onclick="playAudio('audio9','card9')">Escuchar</button><audio id="audio9" src="audios/Picaflor_cometa_Sappho_sparganurus_v1.mp3"></audio></div>
-
-  <div class="card" id="card10"><h3>Picaflor Gigante</h3><button onclick="playAudio('audio10','card10')">Escuchar</button><audio id="audio10" src="audios/Picaflor_gigante_Patagona_gigas_v1.mp3"></audio></div>
-
-  <div class="card" id="card11"><h3>Pichitanka</h3><button onclick="playAudio('audio11','card11')">Escuchar</button><audio id="audio11" src="audios/Pichitanka_Zonotrichia_capensis_v1.mp3"></audio></div>
-
-  <div class="card" id="card12"><h3>Pinchaflor Carbonero</h3><button onclick="playAudio('audio12','card12')">Escuchar</button><audio id="audio12" src="audios/Pinchaflor_carbonero_Diglossa_carbonaria_v2.mp3"></audio></div>
-
-  <div class="card" id="card13"><h3>Pisaka</h3><button onclick="playAudio('audio13','card13')">Escuchar</button><audio id="audio13" src="audios/Pisaka_Nothoprocta_ornata_v1.mp3"></audio></div>
-
-  <div class="card" id="card14"><h3>Pitajo Canela</h3><button onclick="playAudio('audio14','card14')">Escuchar</button><audio id="audio14" src="audios/Pitajo_canela_Ochthoeca_oenanthoides_v1.mp3"></audio></div>
-
-  <div class="card" id="card15"><h3>Ratona</h3><button onclick="playAudio('audio15','card15')">Escuchar</button><audio id="audio15" src="audios/Ratona_Troglodytes_aedon_v2.mp3"></audio></div>
-
-  <div class="card" id="card16"><h3>Sinsonte Castaño</h3><button onclick="playAudio('audio16','card16')">Escuchar</button><audio id="audio16" src="audios/Sinsonte_castaño_Mimus_dorsalis_v1.mp3"></audio></div>
-
-  <div class="card" id="card17"><h3>Tijeral Canelo</h3><button onclick="playAudio('audio17','card17')">Escuchar</button><audio id="audio17" src="audios/Tijeral_canelo_Leptasthenura_fuliginiceps_v1.mp3"></audio></div>
-
-  <div class="card" id="card18"><h3>Yaca Yaca</h3><button onclick="playAudio('audio18','card18')">Escuchar</button><audio id="audio18" src="audios/Yaca_yaca_Colaptes_rupicola_v1.mp3"></audio></div>
+  <div class="card" id="card12">
+    <img src="imagenes/Pinchaflor_carbonero_Diglossa_carbonaria.jpg" class="ave">
+    <button onclick="toggleAudio('audio12','card12')">Escuchar</button>
+    <audio id="audio12" src="audios/Pinchaflor_carbonero_Diglossa_carbonaria_v2.mp3"></audio>
+  </div>
 
 </div>
 
 <script>
-function playAudio(audioId, cardId) {
-  let audios = document.querySelectorAll("audio");
-  let cards = document.querySelectorAll(".card");
 
-  audios.forEach(audio => {
+let currentAudio = null;
+let currentCard = null;
+
+function toggleAudio(audioId, cardId) {
+  let audio = document.getElementById(audioId);
+  let card = document.getElementById(cardId);
+
+  if (currentAudio === audio && !audio.paused) {
     audio.pause();
     audio.currentTime = 0;
-  });
-
-  cards.forEach(card => {
     card.classList.remove("active");
-  });
+    currentAudio = null;
+    currentCard = null;
+    return;
+  }
 
-  document.getElementById(audioId).play();
-  document.getElementById(cardId).classList.add("active");
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+
+  if (currentCard) {
+    currentCard.classList.remove("active");
+  }
+
+  audio.play();
+  card.classList.add("active");
+
+  currentAudio = audio;
+  currentCard = card;
+
+  audio.onended = function() {
+    card.classList.remove("active");
+    currentAudio = null;
+    currentCard = null;
+  };
 }
+
 </script>
 
 </body>
